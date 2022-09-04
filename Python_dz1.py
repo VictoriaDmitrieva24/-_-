@@ -54,3 +54,16 @@
 
 # S = round(((point_2_x-point_1_x)**2+(point_2_y-point_1_y)**2)**0.5,2)
 # print(S)
+
+# Напишите программу для проверки 
+# истинности утверждения ¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z для всех значений предикат.
+
+# x=0
+# y=0
+# z=0
+# A= not(x or y or z)
+# B = (not x) and (not y) and (not z)
+# if A == B:
+#     print("истинна")
+# else:
+#     print("ложь")
