@@ -88,9 +88,3 @@
 #         elem[len(elem)-1] = elem_copy[k]
 # print(elem)
 
-x = [3, 2, 1, 5, -4, 9]
-maxi = x[0]
-for i in x:
-    if i < maxi:
-        maxi = i
-print(maxi)
