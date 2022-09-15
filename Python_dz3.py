@@ -18,20 +18,20 @@
 # - [2, 3, 4, 5, 6] => [12, 15, 16];
 # - [2, 3, 5, 6] => [12, 15]
 
-from math import ceil
+# from math import ceil
 
-my_list1 = [2, 3, 4, 5, 6]
+# def result(my_list):
+
+#     list_new = []
+#     x = len(my_list)-1
+#     for i in range(0, ceil(len(my_list)/2)):
+#         reserv = my_list[i] * my_list[x-i]
+#         list_new.append(reserv)
+#     print(list_new)
+
+# # my_list1 = [2, 3, 4, 5, 6]
 # my_list1 = [2, 3, 5, 6]
-
-def resul(my_list1):
-    list_new = []
-    x = int(len(my_list1))
-    for i in (0,ceil(len(my_list1)/2)):
-        reserv = my_list1[i] * my_list1[x-i]
-        list_new.append(reserv)
-    print(list_new)
-
-resul(my_list1)
+# result(my_list1)
 
 # Задайте список из вещественных чисел. Напишите программу, которая найдёт
 #  разницу между максимальным и минимальным значением дробной части элементов.
