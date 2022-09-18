@@ -68,7 +68,7 @@
 # def kod_2(x,y):
 #     while x > 0:
 #         y = str(x % 2) + y
-#         x = x // 2
+#         x //= 2
 #     print(f'В двоичной системе счисления {x} выглядит так ->: {y}')
 
 # kod_2(x,y)
@@ -78,8 +78,8 @@
 # - для k = 8 список будет выглядеть так: 
 # [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21]
 
+# Не доделанный вариант:
 # fib1 = fib2 = 1
- 
 # n = int(input())
 
 # def otriFibbi(fib1,fib2,n):
@@ -100,3 +100,21 @@
 
 # otriFibbi(fib1,fib2,n)
 # Fibbi(fib1,fib2,n)
+
+
+# Рабочий вариант:
+# def fibonachi(number):
+#     if number < 2:
+#         return number
+#     else:
+#         return fibonachi(number - 1) + fibonachi(number - 2)
+
+
+# list_1 = []
+# number = 5
+# for i in range(number):
+#     list_1.append(fibonachi(i))
+#     list_1.insert(0, fibonachi(i) * (-1) ** (i + 1))
+# list_1.remove(0)
+
+# print(list_1)
