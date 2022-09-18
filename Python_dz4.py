@@ -1,17 +1,12 @@
 # Вычислить число c заданной точностью d 
 # Пример: при d = 0.001, π = 3.141.d=0.001,π=3.141.﻿﻿
 
-# d = 0.25632545
-# to = int(input("Введите точность числа -> "))
-# def func(d):
-#     x = 0
-#     for i in range(0,to):
-#         x += 1
-#     y = 10**x
-#     result = int(d * y) / y
-#     print(result)
-
-# func(d)
+# d = 100.25632545
+# to = (input("Введите точность числа -> ")).split('.')
+# x = int(len(to[1]))
+# y = 10**x
+# result = int(d * y) / y
+# print(result)
 
 # Задайте натуральное число N. 
 # Напишите программу, которая составит список простых множителей числа N.
@@ -74,29 +69,47 @@
 # и записать в файл многочлен степени k. 
 # Пример: k=2 => 2x² + 4x + 5 = 0 или x² + 5 = 0 или 10*x² = 0 35.
 
-from random import randint
+# from random import randint
 
 
-def new_list(kk, list_my_my):
-    while kk != 0:
-        list_my_my.append(randint(0, 10))
-        kk -= 1
+# def new_list(kk, list_my_my):
+#     while kk != 0:
+#         list_my_my.append(randint(0, 100))
+#         kk -= 1
 
-k = int(input("Введите k -> ")) + 1
-list_my = []
-new_list(k, list_my)
 
-for i in list_my:
-    k_1 = k - 1
-    if i != 0:
-        print(str(f'{i}', end=' '))
-        if k == 0:
-            print(str(' = 0'))
-        else:
-            print(str(f'* x ^ {k_1} +', end=' '))
-    k -= 1
+# k = int(input("Введите k -> "))
+# list_my = []
+# k += 1
+# new_list(k, list_my)
+# result = ''
 
-with open('Text.txt', 'w') as fail:
+# for i in range(len(list_my)-1):
+#     k -= 1
+#     if list_my[i] != 0:
+#         result += f'{list_my[i]} '
+#         if k == 0:
+#             result += '= 0'
+#         elif k == 1:
+#             result += f'* x  '
+#         else:
+#             result += f'* x ^ {k}  '
+#     if list_my[0] == 0:
+#         continue
+#     if list_my[i+1] != 0:
+#         result += '+ '
+
+# if list_my[-1] == 0:
+#     result += '= 0'
+# else:
+#     result += f'{list_my[-1]} = 0'
+
+# with open('Text.txt', 'w') as fail:
+#     fail.write(result)
+
+# print(result)
+# print(list_my)
 
 # Даны два файла, в каждом из которых находится запись многочлена.
 # Задача - сформировать файл, содержащий сумму многочленов.
+
