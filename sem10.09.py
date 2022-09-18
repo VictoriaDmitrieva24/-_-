@@ -151,17 +151,128 @@
 # Задайте два числа.
 # Напишите программу, которая найдёт НОК (наименьшее общее кратное) этих двух чисел.
 
-def nok(number_1, number_2):
-    count  = 0
-    reserv = number_1 * number_2
-    while ((reserv - count) % number_1 != 0) and ((reserv - count) % number_2 != 0):
-        count += 1
-    print(f'NOK: {reserv}')
+# def nok(number_1, number_2):
+#     count  = 0
+#     reserv = number_1 * number_2
+#     while ((reserv - count) % number_1 != 0) and ((reserv - count) % number_2 != 0):
+#         count += 1
+#     print(f'NOK: {reserv}')
 
-number_1 = int(input('x1= '))
-number_2 = int(input('x2= '))
+# number_1 = int(input('x1= '))
+# number_2 = int(input('x2= '))
 
-print(nok(number_1, number_2))
+# print(nok(number_1, number_2))
+
+
+#                         СЕМИНАР 5
+# 1. В файле находится N натуральных чисел, записанных через пробел. 
+# Среди чисел не хватает одного, чтобы выполнялось условие A[i] - 1 = A[i-1]. Найдите это число.
+# 1 2 3 5
+
+# наше решение не работает:
+# numbers = '1'
+# list_1 = []
+
+# with open('fail.txt', 'w') as data:
+#     data.write(numbers)
+
+# with open('fail.txt', 'r') as data:
+#     for i in data:
+#         list_1.append(i)
+#         list_1.append(' ')
+# print(list_1)
+
+# for i in range(len(numbers)):
+#     if numbers[i]-1 != numbers[i-1]:
+#         print(numbers[i]+1)
 
 
 
+# path_1 = 'task1.txt'
+
+# def read_file(path):
+#     out_string = ''
+#     res_txt = open(path, 'r')
+#     out_string = res_txt.read()
+#     res_txt.close()
+#     out_list = out_string.split()
+
+#     for i in range(0, len(out_list)):
+#         out_list[i] = int(out_list[i])
+
+#     return out_list
+
+# def find_number(input_list: list):
+    
+#     for i in range(1, len(input_list)):
+#         if input_list[i] - 1 != input_list[i - 1]:
+#             number = input_list[i - 1] + 1
+#             break
+#     return number
+
+
+# print(f'Не хватает числа {find_number(read_file(path_1))}')
+
+# Решение 3:
+# my_list = [1, 2, 4, 5, 6, 8, 9, 11]
+
+# res = [(my_list[i] - 1) for i in range(1, len(my_list)) if (my_list[i] - 1) != my_list[i - 1]]
+# print(res)
+
+# 2. Дан список чисел. Создайте список, в который попадают числа, 
+# описываемые возрастающую последовательность. Порядок элементов менять нельзя.
+    
+#     *Пример:* 
+#     [1, 5, 2, 3, 4, 6, 1, 7] => [1, 5, 6, 7] и т.д.
+
+# 1 вариант:    
+# list = [1, 5, 2, 3, 4, 6, 1, 7]
+# new_list = [list[0]]
+# max = list[0]
+# for i in list:
+#     if i > max:
+#         new_list.append(i)
+#         max = i
+# print(new_list)
+
+# 2 вариант:
+# my_list = [1, 5, 2, 3, 4, 6, 1, 7]
+
+# res = [my_list[0]]
+# [res.append(item) for item in my_list if item > res[-1]]
+# print(res)
+
+
+# 3. Напишите программу, удаляющую из текста все слова, содержащие "абв".
+# 'Мы неабв очень любим Питон иабв Джавуабв!'
+# 'Мы очень любим Питон!'
+
+# 1 вариант:
+# print (' '.join(filter(lambda x: not 'абв' in x,'Мы неабв очень любим Питон иабв Джавуабв!'.split())))
+
+# 2 вариант:
+# my_str = 'Мы неабв очень любим Питон иабв Джавуабв!'.split()
+# print(' '.join([word for word in my_str if 'абв' not in word]))
+
+
+ДЗ
+1. Напишите программу, удаляющую из текста все слова, содержащие "абв".
+2. Создайте программу для игры с конфетами человек против человека.
+    
+    Условие задачи: На столе лежит 2021 конфета. 
+    Играют два игрока делая ход друг после друга. 
+    Первый ход определяется жеребьёвкой. 
+    За один ход можно забрать не более чем 28 конфет. 
+    Все конфеты оппонента достаются сделавшему последний ход. 
+    
+    a) Добавьте игру против бота
+    
+    b) Подумайте как наделить бота "интеллектом"
+    (Сколько конфет нужно взять первому игроку, чтобы забрать все конфеты у своего конкурента?)
+    
+3. Создайте программу для игры в "Крестики-нолики".
+
+4. Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных.
+Входные и выходные данные хранятся в отдельных текстовых файлах.
+aaaffffcc
+a3f4c2
