@@ -255,24 +255,93 @@
 # print(' '.join([word for word in my_str if 'абв' not in word]))
 
 
-ДЗ
-1. Напишите программу, удаляющую из текста все слова, содержащие "абв".
-2. Создайте программу для игры с конфетами человек против человека.
+#                                      СЕМИНАР 5
+# 1. Напишите программу вычисления арифметического выражения заданного строкой. 
+# Используйте операции +,-,/,*. приоритет операций стандартный. 
     
-    Условие задачи: На столе лежит 2021 конфета. 
-    Играют два игрока делая ход друг после друга. 
-    Первый ход определяется жеребьёвкой. 
-    За один ход можно забрать не более чем 28 конфет. 
-    Все конфеты оппонента достаются сделавшему последний ход. 
+#     *Пример:* 
     
-    a) Добавьте игру против бота
+#     2+2 => 4; 
     
-    b) Подумайте как наделить бота "интеллектом"
-    (Сколько конфет нужно взять первому игроку, чтобы забрать все конфеты у своего конкурента?)
+#     1+2*3 => 7; 
     
-3. Создайте программу для игры в "Крестики-нолики".
+#     1-2*3 => -5;
 
-4. Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных.
-Входные и выходные данные хранятся в отдельных текстовых файлах.
-aaaffffcc
-a3f4c2
+# import re
+
+# a = input()
+# result = 0
+# for i in range(len(a)):
+#     if a[i] == '*':
+#         result = int(a[i-1]) * int(a[i+1])
+#         print(result)
+#     if a[i] == '/':
+#         result = int(a[i-1]) / int(a[i+1])
+#         print(result)
+#     if a[i] == '+':
+#         result = int(a[i-1]) + int(a[i+1])
+#         print(result)
+#     if a[i] == '-':
+#         result = int(a[i-1]) - int(a[i+1])
+#         print(result)
+
+# print(result)
+
+
+#  Вариант:
+# expression = input('Что вычислить?')
+# print(eval(expression))
+
+
+
+
+#     - Добавьте возможность использования скобок, меняющих приоритет операций.
+        
+#         *Пример:* 
+        
+#         1+2*3 => 7; 
+        
+#         (1+2)*3 => 9;
+        
+
+# 2. Дана последовательность чисел. Получить список уникальных элементов заданной последовательности.
+
+# *Пример:* 
+# [1, 2, 3, 5, 1, 5, 3, 10] => [2, 10]
+
+# 1 вариант
+# from random import random
+
+# numbers = [1, 2, 4, 5, 5, 6, 6, 6]
+# result = []
+# for i in range(0, len(numbers)):
+#     count = 0
+#     for j in range(0, len(numbers)):
+#         if numbers[i] == numbe  rs[j]:
+#             count += 1
+#     if count == 1:
+#         result.append(numbers[i])
+# print(result)
+
+# 2 вариант
+# numbers = [1, 5, 7, 8, 9, 23, 65]
+# print(numbers)
+# num_copy = []
+# for i in range(0, len(numbers)):
+#     num_copy.append(int(numbers[i]))
+# print(num_copy)
+# print(type(num_copy))
+# reserv = []
+# for j in range(0, max(num_copy)+1):
+#     reserv.append(j)
+# print(reserv)
+# result = []
+# for i in range(0,len(reserv)):
+#     for j in range(0,len(num_copy)):
+#         if reserv[i] == num_copy[j]:
+#             result.insert(random.randint(0,len(num_copy)), (reserv[i]))
+# print(result)
+
+# 3 вариант через фильтр:
+# my_list = [1, 1, 2, 3, 4, 4, 5]
+# print(tuple(filter(lambda num: my_list.count(num) == 1, my_list))) #превращаем в кортеж(tuple)
