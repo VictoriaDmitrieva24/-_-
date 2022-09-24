@@ -75,48 +75,48 @@
     
 # 3. Создайте программу для игры в "Крестики-нолики".
 
-from tkinter import*
-import tkinter
+# from tkinter import*
+# import tkinter
 
-window = Tk() #Создаю окно
-window.title("Добро пожаловать в игру крестики-нолики") #Название окна
-window.geometry('400x250') #Размер окна 
+# window = Tk() #Создаю окно
+# window.title("Добро пожаловать в игру крестики-нолики") #Название окна
+# window.geometry('400x250') #Размер окна 
 
-user = '0'
-def clik(index): #фу-ция нажатия на кнопку
-    global user #передаем глобальную переменную = 0 в функцию
-    if user == 'x': # если пользователь нажал х, то след ход будет 0 и наоборот
-        user = '0'
-    else:
-        user = 'x'
-    but_list[index].configure(text = user)
-    but_list[index]['state'] = tkinter.DISABLED 
-    but_list[index]['relief'] = tkinter.SUNKEN #tk.SUNKEN: Создается эффект углубления элемента;
+# user = '0'
+# def clik(index): #фу-ция нажатия на кнопку
+#     global user #передаем глобальную переменную = 0 в функцию
+#     if user == 'x': # если пользователь нажал х, то след ход будет 0 и наоборот
+#         user = '0'
+#     else:
+#         user = 'x'
+#     but_list[index].configure(text = user)
+#     but_list[index]['state'] = tkinter.DISABLED 
+#     but_list[index]['relief'] = tkinter.SUNKEN #tk.SUNKEN: Создается эффект углубления элемента;
 
-# def start_new_game():
-    # btk_1.destroy закомментированы
-    # btk_2.destroy закомментированы
-but_list = [0 for x in range(9)]
-index = 0
-for i in range(3): #используем двойной цикл, чтобы задать кнопки: 3 на 3 
-    window.columnconfigure(i, weight=1, minsize=75) # строки и столбы сетки будут реагировать на изменение размера окна с помощью метода .columnconfigure() и .rowconfigure()
-    window.rowconfigure(i, weight=1, minsize=50)
-    for j in range(3):
-        frame = Frame(   #Создаем фрейм, чтобы установить расстояние между кнопками
-            master=(window),
-            relief=RAISED, # RAISED создает рамке границу в виде эффекта выпуклости;
-            borderwidth=2 #эффект рамки
-            )
-        frame.grid(row=i, column=j, padx=5, pady=5, sticky="nsew") #Менеджер .grid() работает путем разделения окна или рамки на строки и столбцы (на сетку). row и column (строки и столбца), padx, y добавляет отступ в горизонтальном и вертик. направлении;
-        but_list[index] = Button(master=frame, text='', height = 4, width = 12, command= lambda index = index:clik(index))
-        but_list[index].pack(padx=5, pady=5) #5 пикселей дополнительного отступа вокруг каждого ярлыка с текстом в направлениях x и y:
-        index += 1
+# # def start_new_game():
+#     # btk_1.destroy закомментированы
+#     # btk_2.destroy закомментированы
+# but_list = [0 for x in range(9)]
+# index = 0
+# for i in range(3): #используем двойной цикл, чтобы задать кнопки: 3 на 3 
+#     window.columnconfigure(i, weight=1, minsize=75) # строки и столбы сетки будут реагировать на изменение размера окна с помощью метода .columnconfigure() и .rowconfigure()
+#     window.rowconfigure(i, weight=1, minsize=50)
+#     for j in range(3):
+#         frame = Frame(   #Создаем фрейм, чтобы установить расстояние между кнопками
+#             master=(window),
+#             relief=RAISED, # RAISED создает рамке границу в виде эффекта выпуклости;
+#             borderwidth=2 #эффект рамки
+#             )
+#         frame.grid(row=i, column=j, padx=5, pady=5, sticky="nsew") #Менеджер .grid() работает путем разделения окна или рамки на строки и столбцы (на сетку). row и column (строки и столбца), padx, y добавляет отступ в горизонтальном и вертик. направлении;
+#         but_list[index] = Button(master=frame, text='', height = 4, width = 12, command= lambda index = index:clik(index))
+#         but_list[index].pack(padx=5, pady=5) #5 пикселей дополнительного отступа вокруг каждого ярлыка с текстом в направлениях x и y:
+#         index += 1
 
 
 # # btk_1 = Button(master=window, text ='Игра с другом', height = 5, width=10, command=start_game) закомментированы
 # # btk_2 = Button(master=window, text ='Игра с читером ', height = 5, width=10, command=start_game) закомментированы
 
-window.mainloop() #указывает Python, что нужно запустить цикл событий Tkinter. Данный метод требуется для событий вроде нажатий на клавиши или кнопки
+# window.mainloop() #указывает Python, что нужно запустить цикл событий Tkinter. Данный метод требуется для событий вроде нажатий на клавиши или кнопки
 
 # 4. Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных.
 # Входные и выходные данные хранятся в отдельных текстовых файлах.
