@@ -1,4 +1,81 @@
-#                                             Задача 1 :
+#                                          Задача 1: 
+# Напишите программу, которая принимает на вход число N и
+# выдает набор произведений чисел от 1 до N.
+#     *Пример:*
+#     - пусть N = 4, тогда [ 1, 2, 6, 24 ] (1, 1*2, 1*2*3, 1*2*3*4)
+
+#                             Изначальное решение:
+# import math
+# n = int(input("Введите число: "))
+# i = 1
+# for i in range(1, n+1):
+#    print(math.factorial(i))
+#                                 Новое решение:
+# import math
+# n = int(input("Введите число: "))
+# list = [math.factorial(i) for i in range(1,n+1)]
+# print(list)
+
+#                                          Задача 2: 
+# Задайте список из n чисел последовательности (1 + 1\n)^n и выведите на экран их сумму.
+#                             Изначальное решение:
+# n = int(input("Введите число: "))
+# summa = 0
+# for i in range(1, n+1):
+#     summa += (1+1/i)**i
+# print(round((summa),2))
+#                                 Новое решение(не работает):
+
+# n = int(input("Введите число: "))
+# summa = 0
+# list = [((summa += 1+1/i)**i) for i in range(1,n+1)]
+# print(list)
+
+# 
+# 
+#                                          Задача 3:
+#  Задайте последовательность чисел. Напишите программу, 
+# которая выведет список неповторяющихся элементов исходной последовательности.
+# [1, 2, 4, 5, 5, 6, 6, 6] -> [1, 2, 4, 5,6]
+
+# my_list = [1, 2, 4, 5, 5, 6, 6, 6]
+# print(tuple(filter(lambda num: my_list.count(num) == 1, my_list))) #превращаем в кортеж(tuple)
+# 
+#                                            Задача 4:
+# Напишите программу, которая найдёт произведение пар чисел списка. 
+# Парой считаем первый и последний элемент, второй и предпоследний и т.д.
+# Пример:
+# - [2, 3, 4, 5, 6] => [12, 15, 16];
+# - [2, 3, 5, 6] => [12, 15]
+
+#                                       Изначальный вариант:
+# from math import ceil
+
+# def result(my_list):
+
+#     list_new = []
+#     x = len(my_list)-1
+#     for i in range(0, ceil(len(my_list)/2)):
+#         reserv = my_list[i] * my_list[x-i]
+#         list_new.append(reserv)
+#     print(list_new)
+
+# # my_list1 = [2, 3, 4, 5, 6]
+# my_list1 = [2, 3, 5, 6]
+# result(my_list1)
+
+#                                    Почему-то не получилось:(* Не работает код:
+# from math import ceil
+
+# reserv = 0
+# my_list = [2, 3, 4, 5, 6] 
+# res = []
+# res = [res.append(my_list[item] * my_list[len(my_list)-1-item]) for item in range(0, ceil(len(my_list)/2))]
+# print(res)
+
+
+
+#                                             Задача 5 :
 #     Условие задачи: На столе лежит 2021 конфета. 
 #     Играют два игрока делая ход друг после друга. 
 #     Первый ход определяется жеребьёвкой. 
@@ -62,42 +139,6 @@
 
 # print(f'Игрок {name_igrok_1 if num else name_igrok_2} - вы ПОБЕДИЛИ')
 
-#                                          Задача 2:
-#  Задайте последовательность чисел. Напишите программу, 
-# которая выведет список неповторяющихся элементов исходной последовательности.
-# [1, 2, 4, 5, 5, 6, 6, 6] -> [1, 2, 4, 5,6]
-
-# my_list = [1, 2, 4, 5, 5, 6, 6, 6]
-# print(tuple(filter(lambda num: my_list.count(num) == 1, my_list))) #превращаем в кортеж(tuple)
 
 
-#                                           Задача 3:
-# Напишите программу, которая найдёт произведение пар чисел списка. 
-# Парой считаем первый и последний элемент, второй и предпоследний и т.д.
-# Пример:
-# - [2, 3, 4, 5, 6] => [12, 15, 16];
-# - [2, 3, 5, 6] => [12, 15]
 
-# Изначальный вариант:
-# from math import ceil
-
-# def result(my_list):
-
-#     list_new = []
-#     x = len(my_list)-1
-#     for i in range(0, ceil(len(my_list)/2)):
-#         reserv = my_list[i] * my_list[x-i]
-#         list_new.append(reserv)
-#     print(list_new)
-
-# # my_list1 = [2, 3, 4, 5, 6]
-# my_list1 = [2, 3, 5, 6]
-# result(my_list1)
-
-from math import ceil
-
-reserv = 0
-my_list = [2, 3, 4, 5, 6] 
-res = []
-res = [res.append(my_list[item] * my_list[len(my_list)-1-item]) for item in range(0, ceil(len(my_list)/2))]
-print(res)
